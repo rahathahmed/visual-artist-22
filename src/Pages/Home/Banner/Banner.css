@@ -1,0 +1,15 @@
+
+.content h2 {
+    color: #353223;
+    font-size: 50px;
+    font-weight: bolder;
+
+}
+
+.content .primary-btn {
+    margin-top: 10px;
+    background-color: #49624F;
+    color: #fff;
+    border:none;
+    padding: 10px;
+}
