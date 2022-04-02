@@ -5,11 +5,11 @@ const Banner = () => {
     return (
       <div style={{background:'#FAF9F5'}}>
         <div className="row p-4">
-          <div className="col-md-7">
+          <div className="col-md-6">
             <img width={"450px"} src={Image1} className="mx-auto" alt="" srcset="" />
           </div>
-          <div className="col-md-5">
-            <div className="content mt-5">
+          <div className="col-md-6">
+            <div className="content mt-5 text-left">
               <h5>Hi I am Ferdaus</h5>
               <h2>
                 Grow skill in  <br />

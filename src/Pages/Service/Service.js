@@ -1,19 +1,17 @@
 import React from 'react';
 import Data from '../../Const/Const';
 import ServiceBlock from '../../Sub-Component/ServiceBlock/ServiceBlock';
+import Title from '../../Utilities/Title/Title';
 import './Service.Style.css';
-
+const title = {
+  subtitle: "Service",
+  heading: "Knows from",
+  subheading: "Our Students",
+};
 const Service = () => {
     return (
       <div className="container">
-        <div className="slogan text-center pt-4">
-          <span>SERVICES</span>
-          <h2>
-            Why you need? <br />
-            <span> I provide you that </span>
-          </h2>
-        </div>
-
+        <Title  title ={title}/>
         <div className="row mt-5">
           {Data.service.map((service) => (
             <div className="col-md-3">

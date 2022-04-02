@@ -1,5 +1,7 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import CourceBlock from '../../Sub-Component/CourceBlock/CourceBlock';
+import Title from '../../Utilities/Title/Title';
 import './Courses.style.css'
 const cources = [
   {
@@ -59,24 +61,26 @@ const cources = [
     student: 23,
   },
 ];
+
+const title = {
+  subtitle: "Couser",
+  heading: "Learn from",
+  subheading: "Our Online Cources",
+};
 const Course = () => {
     return (
       <div className="container">
-        <div className="slogan text-center mt-4">
-          <span> COURCE </span>
-          <h2>
-            Learn about <br />
-            Online Course
-          </h2>
-
+        <Title title={title}/>
+        <div className="text-center mt-4">
           <div className="cources-wrapper ">
-            <div className="row mt-3">
+            <div className="row mt-3 g-2">
               {cources.map((cource) => (
                 <div className="col-md-3">
                   <CourceBlock cource={cource} />
                 </div>
               ))}
             </div>
+            <button className='primary-btn' to='/allproducts'> View All Cource </button>
           </div>
         </div>
       </div>

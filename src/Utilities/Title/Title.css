@@ -1,0 +1,7 @@
+.slogan > span{
+    color:orange
+}
+.slogan h2 ,.slogan span{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}

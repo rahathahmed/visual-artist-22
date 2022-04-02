@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Block.style.css'
 const ServiceBlock = ({service}) => {
 
     const {name,description,icon} = service

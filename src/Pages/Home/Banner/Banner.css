@@ -1,14 +1,19 @@
-
 .content h2 {
-    color: #353223;
+    color: #2A2618;
     font-size: 50px;
     font-weight: bolder;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight:800;
 
 }
-
+.content h2 span {
+    font-size: 42px;
+    color:#278227
+}
 .content .primary-btn {
     margin-top: 10px;
-    background-color: #49624F;
+    background-color: #48624F;
     color: #fff;
     border:none;
     padding: 10px;

@@ -1,26 +1,41 @@
 import React from 'react';
 
+
 const styleButton = {
-  background: "#9A9B7B",
-  border: "none",
-  padding: "0px 5px",
-  borderRadious: "10px",
+  background: "#48624F",
+  borderRadius: "5px",
   color: "#fff",
+  height:'30px',
+  padding:'5px'
+};
+
+const styleButton2 = {
+  background: "#000",
+  borderRadius: "5px",
+  color: "#fff",
+  height: "30px",
+  padding: "5px",
 };
 
 const CourceBlock = ({cource}) => {
     const  {thumb,name,lesson,student,price} = cource;
     return (
       <div class="card border-0 text-center">
-        <img src={thumb} alt="" srcset="" />
         <div className="card-body">
-          <div class="d-flex justify-content-between">
-            <h6 className="text-left">{name}</h6>
-            <button style={styleButton}>${price}</button>
+          <img src={thumb} className="img-fluid" alt="" srcset="" />
+          <div class="d-flex">
+            <h6 style={{ textAlign: "left" }}>{name}</h6>
+            <span style={styleButton}> ${30} </span>
           </div>
           <div className="availity d-flex justify-content-between mt-2">
-            <span> {lesson} : lesson</span>
-            <span> {student} : student</span>
+            <span style={styleButton2}>
+              {" "}
+              <b>{lesson} </b> lesson
+            </span>
+            <span>
+              {" "}
+              <b> {student} </b> student
+            </span>
           </div>
         </div>
       </div>
