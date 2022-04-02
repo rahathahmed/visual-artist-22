@@ -1,6 +1,12 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
+const styleLink={
+  color:'#888',
+  fontSize:'18px',
+  marginRight:'10px',
+  textDecoration:'none'
+}
 const Header = () => {
     return (
       <div>
@@ -9,19 +15,32 @@ const Header = () => {
             <Navbar.Brand href="#home">Studio.O</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mx-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Pages</Nav.Link>
-                <Nav.Link href="#home">Blog</Nav.Link>
-                <Nav.Link href="#link">Event</Nav.Link>
-                <Nav.Link href="#link">Shop</Nav.Link>
+              <Nav className="ms-auto">
+                <Link style={styleLink} to="/home">
+                  Home
+                </Link>
+                <Link style={styleLink} to="/shop">
+                  Pages
+                </Link>
+                <Link style={styleLink} to="/cources">
+                  Cources
+                </Link>
+                <Link style={styleLink} to="/blog">
+                  Blog
+                </Link>
+                <Link style={styleLink} to="/event">
+                  Event
+                </Link>
+                <Link style={styleLink} to="/shop">
+                  Shop
+                </Link>
+                <Link style={styleLink} to="/login">
+                  <button className="primary-btn"> Login </button>
+                </Link>
               </Nav>
-              <Nav.Link href="#link">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </Nav.Link>
-              <Nav.Link href="#link">
-                <i class="fa-solid fa-user"></i>
-              </Nav.Link>
+
+              <Nav.Link href="#link"></Nav.Link>
+              <Link></Link>
             </Navbar.Collapse>
           </Container>
         </Navbar>
