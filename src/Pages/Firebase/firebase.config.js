@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCyKnmViR93GPsOJWesLJrYx0cHGZpZgBY",
-  authDomain: "udubas-mobile-shop.firebaseapp.com",
-  projectId: "udubas-mobile-shop",
-  storageBucket: "udubas-mobile-shop.appspot.com",
-  messagingSenderId: "1077767515364",
-  appId: "1:1077767515364:web:ca8e935f068966cb01d0f1",
-  measurementId: "G-309NEZGXJ8",
+  apiKey: "AIzaSyC70-RWCNVzrqBVS3hoa6dpxJeGxMb0Ec4",
+  authDomain: "visual-artist-studio.firebaseapp.com",
+  projectId: "visual-artist-studio",
+  storageBucket: "visual-artist-studio.appspot.com",
+  messagingSenderId: "364955380319",
+  appId: "1:364955380319:web:3ff20495ec2804a062c9ea",
+  measurementId: "G-G475CCZZ1S",
 };
 export default firebaseConfig;
