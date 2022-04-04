@@ -22,10 +22,16 @@ const CourceBlock = ({cource}) => {
     return (
       <div class="card border-0 text-center">
         <div className="card-body">
-          <img src={thumb} className="img-fluid" alt="" srcset="" />
-          <div class="d-flex">
+          <img
+            src={thumb}
+            className="img-fluid"
+            style={{ height: "200px" }}
+            alt=""
+            srcset=""
+          />
+          <div class="d-flex justify-content-between mt-2">
             <h6 style={{ textAlign: "left" }}>{name}</h6>
-            <span style={styleButton}> ${30} </span>
+            <span style={styleButton}> ${price} </span>
           </div>
           <div className="availity d-flex justify-content-between mt-2">
             <span style={styleButton2}>

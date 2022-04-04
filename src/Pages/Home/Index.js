@@ -8,13 +8,13 @@ import Banner from './Banner/Banner';
 
 const Home = () => {
     return (
-        <div>
-            <Banner/>
-            <Service/>
-            <Course/>
-            <Blog/>
-            <Newsteller/>
-        </div>
+      <div>
+        <Banner />
+        <Service />
+        <Course />
+        <Newsteller />
+        <Blog />
+      </div>
     );
 };
 

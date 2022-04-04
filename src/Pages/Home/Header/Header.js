@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+
 const styleLink={
   color:'#888',
   fontSize:'18px',
@@ -8,42 +10,71 @@ const styleLink={
   textDecoration:'none'
 }
 const Header = () => {
+    const { user, logOut } = useAuth();
     return (
       <div>
-        <Navbar expand="lg">
-          <Container>
-            <Navbar.Brand href="#home">Studio.O</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ms-auto">
-                <Link style={styleLink} to="/home">
-                  Home
-                </Link>
-                <Link style={styleLink} to="/shop">
-                  Pages
-                </Link>
-                <Link style={styleLink} to="/cources">
-                  Cources
-                </Link>
-                <Link style={styleLink} to="/blog">
-                  Blog
-                </Link>
-                <Link style={styleLink} to="/event">
-                  Event
-                </Link>
-                <Link style={styleLink} to="/shop">
-                  Shop
-                </Link>
-                <Link style={styleLink} to="/login">
-                  <button className="primary-btn"> Login </button>
-                </Link>
-              </Nav>
+        <nav class=" fixed-top navbar navbar-expand-lg navbar-light bg-light  shadow-sm">
+          <div class="container">
+            <span>Studio</span>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <Link className="nav-link" to="/home">
+                    Home
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link className="nav-link" to="/service">
+                    Service
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link className="nav-link" to="/cources">
+                    Cources
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link className="nav-link" to="/blog">
+                    Blog
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link className="nav-link" to="/login">
+                    Login
+                  </Link>
+                </li>
 
-              <Nav.Link href="#link"></Nav.Link>
-              <Link></Link>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+                {user.email && (
+                  <li class="nav-item">
+                    {user.email ? (
+                      <button className="primary-btn" onClick={logOut}>
+                        {" "}
+                        Logout{" "}
+                      </button>
+                    ) : (
+                      <Link className="primary-btn" to="/login">
+                        {" "}
+                        Log in{" "}
+                      </Link>
+                    )}
+                    {user.email && <span>{user.displayName}</span>}
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
     );
 };

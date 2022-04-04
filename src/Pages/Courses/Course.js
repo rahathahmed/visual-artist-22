@@ -1,66 +1,9 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
 import CourceBlock from '../../Sub-Component/CourceBlock/CourceBlock';
 import Title from '../../Utilities/Title/Title';
 import './Courses.style.css'
-const cources = [
-  {
-    thumb: "https://i.ibb.co/tQYd3R3/FREE-Python-Course-For-Beginners.png",
-    name: "Phython Pro to Master",
-    price: 200,
-    lesson: 10,
-    student: 23,
-  },
-  {
-    thumb: "https://i.ibb.co/tQYd3R3/FREE-Python-Course-For-Beginners.png",
-    name: "Phython Pro to Master",
-    price: 200,
-    lesson: 10,
-    student: 23,
-  },
-  {
-    thumb: "https://i.ibb.co/tQYd3R3/FREE-Python-Course-For-Beginners.png",
-    name: "Phython Pro to Master",
-    price: 200,
-    lesson: 10,
-    student: 23,
-  },
-  {
-    thumb: "https://i.ibb.co/tQYd3R3/FREE-Python-Course-For-Beginners.png",
-    name: "Phython Pro to Master",
-    price: 200,
-    lesson: 10,
-    student: 23,
-  },
-  {
-    thumb: "https://i.ibb.co/tQYd3R3/FREE-Python-Course-For-Beginners.png",
-    name: "Phython Pro to Master",
-    price: 200,
-    lesson: 10,
-    student: 23,
-  },
-  {
-    thumb: "https://i.ibb.co/tQYd3R3/FREE-Python-Course-For-Beginners.png",
-    name: "Phython Pro to Master",
-    price: 200,
-    lesson: 10,
-    student: 23,
-  },
-  {
-    thumb: "https://i.ibb.co/tQYd3R3/FREE-Python-Course-For-Beginners.png",
-    name: "Phython Pro to Master",
-    price: 200,
-    lesson: 10,
-    student: 23,
-  },
-  {
-    thumb: "https://i.ibb.co/tQYd3R3/FREE-Python-Course-For-Beginners.png",
-    name: "Phython Pro to Master",
-    price: 200,
-    lesson: 10,
-    student: 23,
-  },
-];
+import { useEffect, useState } from 'react';
+import Loading from '../../Utilities/Loading/Loading';
+import { Link } from 'react-router-dom';
 
 const title = {
   subtitle: "Couser",
@@ -68,22 +11,41 @@ const title = {
   subheading: "Our Online Cources",
 };
 const Course = () => {
+   const [cources,setCources] = useState([]);
+   const [loading,setLoading] = useState(true);
+
+   useEffect(()=>{
+     fetch("https://json.extendsclass.com/bin/7eddde40f121")
+       .then((res) => res.json())
+       .then((data) => {
+         setCources(data)
+         setLoading(false)
+       });
+   },[])
+
+   const Content = (
+     <div className="container">
+       <Title title={title} />
+       <div className="text-center mt-4">
+         <div className="cources-wrapper ">
+           <div className="row mt-3 g-3">
+             {cources.map((cource) => (
+               <div className="col-md-4 mt-2">
+                 <CourceBlock cource={cource} />
+               </div>
+             ))}
+           </div>
+           <button className="primary-btn" to="/allproducts">
+             {" "}
+             <Link to='/cources'> View All Cource </Link>
+           </button>
+         </div>
+       </div>
+     </div>
+   );
+
     return (
-      <div className="container">
-        <Title title={title}/>
-        <div className="text-center mt-4">
-          <div className="cources-wrapper ">
-            <div className="row mt-3 g-2">
-              {cources.map((cource) => (
-                <div className="col-md-3">
-                  <CourceBlock cource={cource} />
-                </div>
-              ))}
-            </div>
-            <button className='primary-btn' to='/allproducts'> View All Cource </button>
-          </div>
-        </div>
-      </div>
+       loading ? <Loading/> : Content
     );
 };
 

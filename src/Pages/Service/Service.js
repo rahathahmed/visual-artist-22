@@ -19,13 +19,13 @@ const Service = () => {
             </div>
           ))}
         </div>
-        {/* <div className="vedio-banner mt-4">
+        <div className="vedio-banner mt-4">
           <img
             src="https://i.ibb.co/NF7GPrG/various-art-brush-paint-preview.jpg"
             alt=""
             className='w-100'
           />
-        </div> */}
+        </div>
       </div>
     );
 };
